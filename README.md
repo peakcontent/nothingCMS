@@ -10,8 +10,8 @@ Specifically, a comma-delimited table of contents file (toc.txt) that must be st
 
 The toc.file should have a header row and four columns, like so:
 
-Order, Index, Title, Link
-1, 1, About, ./content/about/about.html
+Order, Index, Title, Link  
+1, 1, About, ./content/about/about.html  
 2, 1.1, User Guide, ./content/guide/guide.html
 
 Each row represents a document that will be added to the table of contents. The order that the documents appear in the table of contents is controlled by the variable in the first column ("Order") - the documents do not have to be listed in the same order that they will appear.
