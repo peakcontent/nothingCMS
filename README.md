@@ -21,3 +21,28 @@ The table of contents will display and index for the entry (1, 1.1, 1.1.1) as en
 In this case (based on the sample toc.txt file) the table of contents will feature two entries.
 
 The JS code (script.js) builds this table of contents and shows the selected content (when the user clicks on an entry in the toc) in the iFrame.
+
+# Getting the code
+
+    % git clone https://github.com/peakcontent/nothingCMS.git
+
+
+# Building
+
+You will need `node` and `grunt-cli` to build.
+
+1. (Once only) Install [Node.js](http://nodejs.org/) and `npm` - useful instructions [here](https://gist.github.com/isaacs/579814).
+
+    Make sure you have Node.js v 0.10 or higher.
+
+2. (Once only) Use `npm` to install `grunt-cli`
+
+        % npm install -g grunt-cli  # May need to be run as root
+
+3. (Every time you make a fresh checkout) Install dependencies (including `grunt`) for this project (run from project root)
+
+        % npm install
+
+4. Build using `grunt` (run from project root)
+
+        % grunt
