@@ -22,12 +22,12 @@ window.onload = function() {
 		var iFrameDoc = iFrame.contentDocument || iFrame.contentWindow.document; // http://stackoverflow.com/questions/5002334...
 		// parse toc file, place in array;
 
-				// get array...
-			var arr = [];
-			  arr = iFrameDoc.body.textContent.split(/\n/); 	// split lines;
-			  arr.splice(0,1)									// delete header row;
+		// get array...
+		var arr = [];
+			arr = iFrameDoc.body.textContent.split(/\n/); 	// split lines;
+			arr.splice(0,1)					// delete header row;
 			for (var i = 0; i < arr.length; i++) {
-				arr[i] = arr[i].split(',');						// split items;
+				arr[i] = arr[i].split(',');			// split items;
 			};
 
 			// delete empty lines...
@@ -44,8 +44,8 @@ window.onload = function() {
 			// place it in table of contents...
 			var toc_ul = document.getElementById("toc_ul");
 			for (var i = 0; i < arr.length; i++) {
-					// create list item;
-					// move to function;
+				// create list item;
+				// move to function;
 				var new_li = document.createElement("li");
 
 				// add link;
@@ -74,7 +74,7 @@ window.onload = function() {
 	var contentIFrame = document.getElementById("content");
 
 		// resize content window to default;
-	 	contentIFrame.height = '300 px';
+ 		contentIFrame.height = '300 px';
 		
 		contentIFrame.src = this.dataValue;
 	 };
