@@ -22,12 +22,12 @@ In this case (based on the sample toc.txt file) the table of contents will featu
 
 The JS code (script.js) builds this table of contents and shows the selected content (when the user clicks on an entry in the toc) in the iFrame.
 
-# Getting the code
+## Getting the code
 
     % git clone https://github.com/peakcontent/nothingCMS.git
 
 
-# Building
+## Building
 
 You will need `node` and `grunt-cli` to build.
 
