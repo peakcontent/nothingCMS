@@ -2,31 +2,25 @@
 
 (function () {
 
-var contentIFrame = document.getElementById("content");
-
 window.onload = function() {
-
+	
 	// add height adjustment event on content iframe change;
-	//	var contentIFrame = document.getElementById("content");
+		var contentIFrame = document.getElementById("content");
 			contentIFrame.onload = function() {
-		var contentIFrameDoc = contentIFrame.contentDocument || contentIFrame.contentWindow.document; // http://stackoverflow.com/questions/5002334...
- 		contentIFrame.height = (contentIFrameDoc.body.offsetHeight + 50) + 'px';
-	};
-
+				var contentIFrameDoc = contentIFrame.contentDocument || contentIFrame.contentWindow.document; // http://stackoverflow.com/questions/5002334...
+				contentIFrame.height = (contentIFrameDoc.body.offsetHeight + 50) + 'px';
+			};
 	loadMenu();
-
-
-}
+};
 
   function loadMenu() {
 
 	var iFrame = document.getElementById("ift");
 		iFrame.src = "toc.txt"; // add error handling here to toc file;
-
 		iFrame.onload = function() {
-			var iFrameDoc = iFrame.contentDocument || iFrame.contentWindow.document; // http://stackoverflow.com/questions/5002334...
 
-			// parse toc file, place in array;
+		var iFrameDoc = iFrame.contentDocument || iFrame.contentWindow.document; // http://stackoverflow.com/questions/5002334...
+		// parse toc file, place in array;
 
 				// get array...
 			var arr = [];
@@ -34,20 +28,21 @@ window.onload = function() {
 			  arr.splice(0,1)									// delete header row;
 			for (var i = 0; i < arr.length; i++) {
 				arr[i] = arr[i].split(',');						// split items;
-				};
+			};
 
 			// delete empty lines...
 			for (var i = arr.length-1; i >= 0; i--) {
 				if (arr[i].length < 4) {arr.splice(i,1)};
-				};
+			};
+				
 			// sort it...
-			arr.sort(function(a,b) {
+			arr.sort (function(a,b) {
 				return a[0] - b[0];
-				});
+			});
 
 
 			// place it in table of contents...
-			toc_ul = document.getElementById("toc_ul");
+			var toc_ul = document.getElementById("toc_ul");
 			for (var i = 0; i < arr.length; i++) {
 					// create list item;
 					// move to function;
@@ -63,26 +58,29 @@ window.onload = function() {
 
 				// add onclick;
 				new_li.onclick = loadContent;
-
-
 				toc_ul.appendChild(new_li);
 				};
 
 			// show first item in menu by calling its onClick event;
-			document.getElementById("toc_ul").childNodes[1].onclick();
-
+			toc_ul.getElementsByTagName("li")[0].onclick();
 		};
 
  };
 
-
  function loadContent() {
 	 // add the content of the target in the ToC to the content iframe;
 	 // pending - add error handing and handling of different content types...;
-	// var contentIFrame = document.getElementById("content");
+	 
+	var contentIFrame = document.getElementById("content");
+
+		// resize content window to default;
+	 	contentIFrame.height = '300 px';
+		
 		contentIFrame.src = this.dataValue;
 	 };
 
 
 })();
+
+
 
