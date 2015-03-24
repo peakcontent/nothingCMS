@@ -67,19 +67,9 @@
         //	from: https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started
         var httpRequest;
 
-        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+        if (window.XMLHttpRequest) {
             httpRequest = new XMLHttpRequest();
-        } else if (window.ActiveXObject) { // IE
-            try {
-                httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
-            } catch (e) {
-                try {
-                    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-                } catch (e) {}
-            }
-        }
-
-        if (!httpRequest) {
+        } else {
             alert('Giving up :( Cannot create an XMLHTTP instance');
             return false;
         }
