@@ -62,10 +62,6 @@
         toc_ul.getElementsByTagName("li")[0].onclick();
     }
 
-
-
-
-
     function readFile() {
         //  uses AJAX for load the table of contents text file 'toc.txt' that is stored
         //  in the same location as the index.html file;
