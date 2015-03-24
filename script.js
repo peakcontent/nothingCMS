@@ -1,4 +1,3 @@
-/*global document, window, alert, ActiveXObject*/
 (function () {
     "use strict";
 

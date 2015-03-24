@@ -7,7 +7,8 @@ module.exports = function (grunt) {
 				node: true,  // because the Gruntfile will be linted
 				browser: true,
 				undef: true,
-				unused: true
+				unused: true,
+                devel: true
 			}
 		}
 	});
