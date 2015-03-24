@@ -1,4 +1,4 @@
-/*global document, window, alert, console, require*/
+/*global document, window, alert, ActiveXObject*/
 (function () {
     "use strict";
 
@@ -106,10 +106,10 @@
         contentIFrame.onload = function () {
             var contentIFrameDoc = contentIFrame.contentDocument || contentIFrame.contentWindow.document; // http://stackoverflow.com/questions/5002334...
             contentIFrame.height = (contentIFrameDoc.body.offsetHeight + 50) + 'px';
-        }
+        };
 
         readFile();
 
-    }
+    };
 
 }());
