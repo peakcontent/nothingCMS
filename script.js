@@ -9,8 +9,7 @@
 
         // resize content window to default;
         contentIFrame.height = '300px';
-
-        contentIFrame.src = this.dataValue;
+        contentIFrame.src = event.target.dataValue;
     } // end loadContent;
 
 
@@ -19,7 +18,7 @@
         // get array...;
         var arr = [],
             i,
-            toc_ul = document.getElementById("toc_ul"),
+            toc = document.getElementById("toc"),
             new_li,
             padding;
         arr = tocTxt.split(/\n/);                          // split lines;
@@ -52,13 +51,13 @@
             new_li.style.paddingLeft = padding;
 
             // add onclick;
-            new_li.onclick = loadContent;
-            toc_ul.appendChild(new_li);
+            new_li.addEventListener("click", loadContent, false); // load content into iFrame when user clicks on TOC;
+            toc.appendChild(new_li);
         }
 
         // show first item in menu by calling its onClick event;
 
-        toc_ul.getElementsByTagName("li")[0].onclick();
+        toc.getElementsByTagName("li")[0].click();
     }
 
     function readFile() {
@@ -96,9 +95,7 @@
             var contentIFrameDoc = contentIFrame.contentDocument || contentIFrame.contentWindow.document; // http://stackoverflow.com/questions/5002334...
             contentIFrame.height = (contentIFrameDoc.body.offsetHeight + 50) + 'px';
         };
-
         readFile();
-
     };
 
 }());

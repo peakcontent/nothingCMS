@@ -253,7 +253,7 @@ blockquote
  	vertical-align: top;
 	}
 	
-#toc 	
+#toc_container
 	{
 	display: inline-block;
 	background-color: white;
@@ -265,7 +265,7 @@ blockquote
 	padding: 5pt;
 	}
 	
-#toc ul li:hover 
+#toc_container ul li:hover
 	{
 	color: red;
 	cursor: pointer;
